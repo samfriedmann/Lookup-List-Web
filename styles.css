@@ -1,0 +1,129 @@
+/* some dark mode features adopted from https://www.youtube.com/watch?v=6YrOGKmGTCY */
+:root {
+    scroll-behavior: smooth;
+
+    --text: black;
+    --background1: white;
+    --background2: rgb(222, 222, 222);
+}
+
+.dark-mode {
+    --text: white;
+    --background1: black;
+    --background2: rgb(90, 90, 90);
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    /*display: flex;*/
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+textarea {
+
+    width: 100%;
+    resize: vertical;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+
+    background-color: var(--background2);
+    color: var(--text);
+}
+textarea::-webkit-input-placeholder {
+    color: var(--text);
+}
+textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    color: var(--text);
+}
+textarea::placeholder {
+    color: var(--text);
+}
+
+body {
+    padding: 18px;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: var(--background1);
+    color: var(--text);
+}
+
+fieldset {
+    background-color: var(--background2);
+}
+
+/* https://www.w3schools.com/howto/howto_css_switch.asp
+The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    float: right;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background2);
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--background1);
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+input:checked+.slider {
+    background-color: var(--background2);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider {
+    border-radius: 34px;
+}
+.slider:before {
+    border-radius: 50%;
+}

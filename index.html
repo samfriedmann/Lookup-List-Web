@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lookup List</title>
+
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+
+
+    <hgroup>
+      <h1>
+        Lookup List
+        <label class="switch">
+          <input type="checkbox" id="darkMode">
+          <span class="slider"></span>
+        </label>
+      </h1>
+    </hgroup>
+
+    <div class="row">
+      <div class="column">
+
+        <form>
+          <label>Words:</label>
+          <textarea id="wordInput" name="wordInput"
+            rows="4" placeholder="Enter your terms here."></textarea>
+          <br><br>
+          <button type="button" id="go">Look Up</button>
+
+        </form>
+        <br><br>
+        <form>
+
+          <label>Definitions:</label>
+          <textarea id="defInput" name="defInput" rows="4"
+            placeholder="No definitions yet. Paste terms above and click &quot;Look Up.&quot;"></textarea>
+          <br><br>
+          <button type="button" id="copy">Copy</button>
+          <button type="button" id="clear">Clear</button>
+          <button type="button" id="test">Test</button>
+        </form>
+      </div>
+      <div class="column">
+        <h3>Options:</h3>
+
+        <fieldset>
+          <form>
+            <label style="display:block">Response Length:</label>
+            <input type="range" id="lengthSlider"
+              name="lengthSlider" min="1" max="10" value="1"
+              oninput="lengthText.value=lengthSlider.value">
+            <!--response length box-->
+            <input oninput="lengthSlider.value=lengthText.value"
+              id="box" value="1" name="lengthText"
+              for="lengthSlider" size="1"
+              oninput="lengthText.value=lengthSlider.value">
+              <label>Only applicable for Wikipedia. Currently does nothing.</label>
+          </form>
+
+
+          <br>
+
+          <form>
+            <label style="display:block">Sources:</label>
+            <fieldset>
+              <input type="checkbox" id="Google" checked>Google Dictionary<br>
+              <input type="checkbox" id="Wikipedia"><s>Wikipedia</s><br>
+            </fieldset>
+          </form>
+
+          <br>
+          <label for="separatorInput" style="display:block">Separate
+            words with:</label>
+          <input type="text" id="separatorInput" maxlength="10"
+            size="1" value=" - "><br>
+
+
+        </fieldset>
+      </div>
+    </div>
+
+    <br>Lookup List alpha version. Last updated 7/21/22.<br><br>
+
+    <u>This site is a work in progress.</u>
+    <br>Currently only supports definitions of exact-match
+    words on Google Dictionary<br>
+    NEW: Wikipedia results <em>(extreme alpha)</em><br>
+    Definitions box does not resize<br>
+    Legacy (slower) lookup algorithm in use
+
+    <br><br>Copyright © Sam Friedman 2022.
+    <br>Questions, suggestions, and contact: <a
+      href="mailto:dinosam320@gmail.com">dinosam320@gmail.com</a>
+
+    <script src="scripts.js"></script>
+
+  </body>
+
+</html>
